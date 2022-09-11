@@ -7,8 +7,9 @@
     direction: rtl;
   }
   body {
+    @apply text-neutral-800;
     font-family: "IRANSans";
-    font-weight: normal;
+    font-weight: 400;
     font-style: normal;
   }
 }
