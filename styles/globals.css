@@ -7,7 +7,7 @@
     direction: rtl;
   }
   body {
-    @apply text-neutral-800;
+    @apply bg-gray-200 text-gray-800;
     font-family: "IRANSans";
     font-weight: 400;
     font-style: normal;
