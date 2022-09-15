@@ -12,7 +12,7 @@ const Search = () => {
         </div>
         <input
           placeholder="جستجو"
-          className="w-full  text-sm text-gray-900 outline-none "
+          className="w-full  bg-transparent text-sm text-gray-900 outline-none "
         />
       </div>
     </form>
