@@ -6,7 +6,9 @@ import Search from "./Search";
 const theme = "light";
 function Header() {
   return (
-    <header className={`${styles.header} `}>
+    <header
+      className={`${styles.header} md:grid-cols-[1fr_1fr_1fr_1fr_auto_auto]`}
+    >
       {/* TOGGLE MENU */}
       <button className={`col-span-2 cursor-pointer text-[1.75rem] md:hidden`}>
         <BiMenu />
