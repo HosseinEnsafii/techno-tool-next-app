@@ -1,21 +1,20 @@
 const strapiApiUrl = process.env.STRAPI_API_BASE_URL?.replace("/api", "");
 
-const imageReducer = (imgField, generateThumb = false) => {
-  const fields = imgField.data.attributes;
-  const thumbnail = fields.formats.thumbnail;
+const imageReducer = ({ attributes, id }, generateThumb = false) => {
   return {
-    width: fields.width,
-    height: fields.height,
-    url: `${strapiApiUrl}${fields.url}`,
-    contentType: fields.mime,
+    width: attributes.width,
+    height: attributes.height,
+    url: `${strapiApiUrl}${attributes.url}`,
+    contentType: attributes.mime,
     thumbnail: generateThumb
       ? {
-          width: thumbnail.width,
-          contentType: thumbnail.mime,
-          height: thumbnail.height,
-          url: `${strapiApiUrl}${thumbnail.url}`,
+          width: attributes.formats.thumbnail.width,
+          contentType: attributes.formats.thumbnail.mime,
+          height: attributes.formats.thumbnail.height,
+          url: `${strapiApiUrl}${attributes.formats.thumbnail.url}`,
         }
       : null,
+    id,
   };
 };
 export default imageReducer;

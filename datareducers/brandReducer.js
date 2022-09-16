@@ -1,9 +1,9 @@
 import imageReducer from "./imageReducer";
 
-export default function ({ attributes }) {
+export default function ({ attributes, id }) {
   return {
-    name_fa: attributes.name_fa,
-    name_en: attributes.name_en,
+    ...attributes,
     logo: imageReducer(attributes.logo),
+    id,
   };
 }

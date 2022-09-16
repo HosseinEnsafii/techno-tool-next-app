@@ -11,5 +11,5 @@ export const getAllBrands = async () => {
   const res = await axios.get(`/brands?${query}`);
   const brandsRaw = res.data.data;
   const brands = brandsRaw.map((brandRaw) => brandReducer(brandRaw));
-  return brands;
+  return brandsRaw;
 };
