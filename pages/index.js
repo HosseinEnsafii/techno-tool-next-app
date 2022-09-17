@@ -1,16 +1,17 @@
 import { getAllBrands } from "../datalayer/brand";
-
-export default function Home({ brands }) {
-  console.log(brands);
+import { getProducts } from "../datalayer/product";
+import Image from "next/image";
+export default function Home({ products }) {
+  console.log(products);
   return <div className="w-full "></div>;
 }
 
 export async function getStaticProps() {
-  const brands = await getAllBrands();
-  console.log(brands);
+  const products = await getProducts();
+  console.log(products);
   return {
     props: {
-      brands,
+      products,
     },
   };
 }
