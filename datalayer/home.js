@@ -15,7 +15,6 @@ export async function getHomeData() {
   });
   const res = await axios.get(`home-page?${query}`);
   const homeRaw = res.data;
-  console.log(homeRaw);
   const homeData = homeReducer(homeRaw.data);
   return homeData;
 }
