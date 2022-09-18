@@ -10,6 +10,7 @@ export async function getHomeData() {
       "new_products.images",
       "best_prices",
       "best_prices.images",
+      "hero_banners",
     ],
   });
   const res = await axios.get(`home-page?${query}`);

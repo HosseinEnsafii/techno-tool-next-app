@@ -1,3 +1,4 @@
+import imageReducer from "./imageReducer";
 import productReducer from "./productReducer";
 
 function homeReducer({ attributes }) {
@@ -14,10 +15,15 @@ function homeReducer({ attributes }) {
     productReducer(bProduct)
   );
 
+  const hero_banners = attributes.hero_banners.data.map((banner) =>
+    imageReducer(banner)
+  );
+
   return {
     incredible_products,
     new_products,
     best_prices,
+    hero_banners,
   };
 }
 export default homeReducer;
