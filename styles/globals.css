@@ -14,6 +14,14 @@
   }
 }
 
+.swiper-pagination-bullet {
+  opacity: 0.8;
+  background: hsl(0, 0%, 100%);
+}
+
+.swiper-pagination-bullet-active {
+  @apply bg-sky-500;
+}
 @font-face {
   font-family: Vazir;
   src: url("../public/fonts/Vazir/Vazirmatn-Thin.woff2") format("woff2");

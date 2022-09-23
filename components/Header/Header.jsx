@@ -15,7 +15,7 @@ function Header() {
       </button>
 
       {/* LOGO */}
-      <h2 className={`${styles.logo} col-span-2 md:col-span-1`}>TechnoTool</h2>
+      <h2 className={`${styles.logo}`}>TechnoTool</h2>
 
       {/* THEME ICON */}
       <button

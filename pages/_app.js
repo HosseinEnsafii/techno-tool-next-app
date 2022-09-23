@@ -1,8 +1,12 @@
-import "../styles/globals.css";
 import "../config/axios";
 import Layout from "../layout";
 import { Provider } from "react-redux";
 import store from "../redux/store";
+
+// SWIPER CSS
+import "swiper/css";
+import "swiper/css/pagination";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
