@@ -1,9 +1,7 @@
 import { useSelector } from "react-redux";
 
 const useHomeState = () => {
-  const { incredible_products, new_products, best_prices, hero_banners } =
-    useSelector((state) => state.homeState);
-
-  return { incredible_products, new_products, best_prices, hero_banners };
+  const homeState = useSelector((state) => state.homeState);
+  return { ...homeState };
 };
 export default useHomeState;

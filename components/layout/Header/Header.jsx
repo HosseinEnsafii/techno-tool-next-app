@@ -1,16 +1,24 @@
 import { BiSun, BiMenu, BiCart } from "react-icons/bi";
 import { RiMoonFill } from "react-icons/ri";
+import { useDispatch } from "react-redux";
 import styles from "./styles";
 import Search from "./Search";
+import { uiActions } from "../../../redux/slices/uiSlice";
+const { toggleDrawer } = uiActions;
 
 const theme = "light";
 function Header() {
+  const dispatch = useDispatch();
+
   return (
-    <header
-      className={`${styles.header} md:grid-cols-[1fr_1fr_1fr_1fr_auto_auto]`}
-    >
+    <header className={`${styles.header} md:grid-cols-[1fr_1fr_1fr_1fr_auto_auto]`}>
       {/* TOGGLE MENU */}
-      <button className={`col-span-2 cursor-pointer text-[1.75rem] md:hidden`}>
+      <button
+        onClick={() => {
+          dispatch(toggleDrawer());
+        }}
+        className={`col-span-2 cursor-pointer justify-self-start text-[1.75rem] md:hidden`}
+      >
         <BiMenu />
       </button>
 

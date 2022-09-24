@@ -1,4 +1,4 @@
-import { Footer, Header, Menu } from "../components";
+import { Footer, Header, Menu } from "../components/layout";
 import Container from "./Container";
 
 function Layout({ children }) {
