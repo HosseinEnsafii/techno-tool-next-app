@@ -13,26 +13,24 @@ function Header() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <header
-      className={`${styles.header} dark:bg-gray-800 md:grid-cols-[1fr_1fr_1fr_1fr_auto_auto]`}
-    >
+    <header className={`${styles.header}  md:grid-cols-[1fr_1fr_1fr_1fr_auto_auto]`}>
       {/* TOGGLE MENU */}
       <div
         onClick={() => {
           dispatch(toggleDrawer());
         }}
-        className={`col-span-2 cursor-pointer justify-self-start text-[1.75rem] md:hidden`}
+        className={`col-span-2 cursor-pointer justify-self-start text-[1.75rem] dark:text-gray-300 md:hidden`}
       >
         <BiMenu />
       </div>
 
       {/* LOGO */}
-      <h2 className={`${styles.logo}`}>TechnoTool</h2>
+      <h2 className={`${styles.logo} select-none dark:text-red-400`}>TechnoTool</h2>
 
       {/* THEME ICON */}
       <div
         onClick={() => toggleTheme()}
-        className={`col-span-2 cursor-pointer justify-self-end  rounded-full bg-gray-300 p-2 text-[1.75rem]  md:col-span-1 md:col-start-6 md:justify-self-start `}
+        className={`col-span-2 cursor-pointer justify-self-end  rounded-full bg-gray-300 p-2 text-[1.75rem]  dark:bg-gray-900 dark:text-gray-300 md:col-span-1 md:col-start-6 md:justify-self-start`}
       >
         {theme === "light" ? <BiMoon /> : <BiSun />}
       </div>
@@ -42,7 +40,7 @@ function Header() {
 
       {/* CART ICON */}
       <button
-        className={` col-span-1  flex cursor-pointer justify-center text-[2.2rem] md:col-start-5 md:row-start-1 md:justify-self-end`}
+        className={` col-span-1  flex cursor-pointer justify-center text-[2.2rem] dark:text-gray-300 md:col-start-5 md:row-start-1 md:justify-self-end`}
       >
         <BiCart />
       </button>

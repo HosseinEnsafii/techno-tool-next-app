@@ -24,17 +24,22 @@ function Drawer() {
             dispatch(closeDrawer());
           }}
         />
-        <aside className={`${styles.drawer} ${openDrawer ? styles.openDrawer : ""}`}>
+        <aside
+          className={`${styles.drawer} ${openDrawer ? styles.openDrawer : ""} dark:bg-gray-700`}
+        >
           {/* CLOSE ICON */}
-          <button onClick={() => dispatch(closeDrawer())} className={`${styles.closeBtn}`}>
+          <button
+            onClick={() => dispatch(closeDrawer())}
+            className={`${styles.closeBtn} dark:text-gray-300`}
+          >
             <BiX className="h-[1.875rem] w-[1.875rem] " />
           </button>
 
           {/* LOGO */}
-          <h1 className="mt-[1.75rem] mb-2 text-center text-[1.75rem] font-bold leading-none tracking-tight text-red-500">
+          <h1 className="mt-[1.75rem] mb-2 select-none text-center text-[1.75rem] font-bold leading-none tracking-tight text-red-500">
             technoTool
           </h1>
-          <hr />
+          <hr className="dark:border-gray-400" />
 
           <ul className="mt-4 flex flex-col items-center gap-2 ">
             {menu.map((item, i) => (

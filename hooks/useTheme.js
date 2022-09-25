@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setTheme as setThemeAction } from "../redux/slices/uiSlice";
-import useBrowser from "./useBrowser";
 
 const useTheme = () => {
   const dispatch = useDispatch();
-  const { isBrowser } = useBrowser();
 
   const [theme, setTheme] = useState(function () {
     if (typeof window !== "undefined") {
