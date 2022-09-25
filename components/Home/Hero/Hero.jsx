@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination ,Autoplay} from "swiper";
-import useHomeState from "../../../hooks/state/useHomeState";
+import { Pagination, Autoplay } from "swiper";
 import Image from "next/image";
+import { useHomeState } from "../../../hooks";
 function Hero() {
   const { hero_banners } = useHomeState();
 
@@ -13,7 +13,7 @@ function Hero() {
         spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2000 }}
-        modules={[Pagination,Autoplay]}
+        modules={[Pagination, Autoplay]}
         pagination={{
           clickable: true,
         }}

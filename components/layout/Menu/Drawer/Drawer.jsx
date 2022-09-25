@@ -1,24 +1,20 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { createPortal } from "react-dom";
-import useUiState from "../../../../hooks/state/useUiState";
-import Backdrop from "../../../shared/Backdrop/Backdrop";
 import styles from "../styles";
-import { uiActions } from "../../../../redux/slices/uiSlice";
+import { closeDrawer } from "../../../../redux/slices/uiSlice";
 import { BiX } from "react-icons/bi";
 import { menu } from "../../../../config/constants";
 import DropDown from "./DropDown";
+import { useUiState } from "../../../../hooks";
+import { Backdrop } from "../../../shared";
+import useBrowser from "../../../../hooks/useBrowser";
+
 function Drawer() {
-  const [isBrowser, setIsBrowser] = useState(false);
   const { openDrawer } = useUiState();
   const dispatch = useDispatch();
-  const { closeDrawer } = uiActions;
 
-  console.log(openDrawer);
-  useEffect(() => {
-    setIsBrowser(true); // set statement true if page rendered
-  });
-
+  const { isBrowser } = useBrowser();
   if (isBrowser) {
     return createPortal(
       <>
@@ -30,10 +26,7 @@ function Drawer() {
         />
         <aside className={`${styles.drawer} ${openDrawer ? styles.openDrawer : ""}`}>
           {/* CLOSE ICON */}
-          <button
-            onClick={() => dispatch(uiActions.closeDrawer())}
-            className={`${styles.closeBtn}`}
-          >
+          <button onClick={() => dispatch(closeDrawer())} className={`${styles.closeBtn}`}>
             <BiX className="h-[1.875rem] w-[1.875rem] " />
           </button>
 
@@ -44,8 +37,8 @@ function Drawer() {
           <hr />
 
           <ul className="mt-4 flex flex-col items-center gap-2 ">
-            {menu.map((item) => (
-              <DropDown item={item} />
+            {menu.map((item, i) => (
+              <DropDown key={i} item={item} />
             ))}
           </ul>
         </aside>

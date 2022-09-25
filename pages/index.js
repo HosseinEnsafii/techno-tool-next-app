@@ -1,10 +1,9 @@
 import { getProducts } from "../datalayer/product";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { homeActions } from "../redux/slices/homeSlice";
+import { getData } from "../redux/slices/homeSlice";
 import { getHomeData } from "../datalayer/home";
 import Hero from "../components/Home/Hero/Hero";
-const { getData } = homeActions;
 
 export default function Home({ homeData }) {
   const dispatch = useDispatch();

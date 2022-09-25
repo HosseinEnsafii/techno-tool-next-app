@@ -2,6 +2,7 @@ import "../config/axios";
 import Layout from "../layout";
 import { Provider } from "react-redux";
 import store from "../redux/store";
+import { useUiState } from "../hooks";
 
 // SWIPER CSS
 import "swiper/css";
