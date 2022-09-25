@@ -1,19 +1,19 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Pagination } from "swiper";
+import { Pagination ,Autoplay} from "swiper";
 import useHomeState from "../../../hooks/state/useHomeState";
 import Image from "next/image";
 function Hero() {
   const { hero_banners } = useHomeState();
 
   return (
-    <div className="mx-auto mt-2 mb-1 ">
+    <div className="mx-auto mt-2 mb-1">
       <Swiper
         slidesPerView={1}
         spaceBetween={5}
         loop={true}
         autoplay={{ delay: 2000 }}
-        modules={[Pagination]}
+        modules={[Pagination,Autoplay]}
         pagination={{
           clickable: true,
         }}

@@ -6,6 +6,7 @@ import store from "../redux/store";
 // SWIPER CSS
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
