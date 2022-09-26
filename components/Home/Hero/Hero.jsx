@@ -20,8 +20,13 @@ function Hero() {
       >
         {hero_banners.map((banner) => (
           <SwiperSlide key={banner.id}>
-            <div className="flex justify-center">
-              <img src={banner.url} alt="banner logo" />
+            <div className="relative h-64 md:h-96 lg:h-[32rem]">
+              <Image
+                src={banner.url}
+                layout="fill"
+                objectFit="contain"
+                sizes="(max-width:576px) 100vw,"
+              />
             </div>
           </SwiperSlide>
         ))}

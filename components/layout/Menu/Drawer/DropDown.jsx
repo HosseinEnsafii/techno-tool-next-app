@@ -3,6 +3,8 @@ import { BiChevronDown, BiChevronUp } from "react-icons/bi";
 const DropDown = ({ item }) => {
   const [open, setOpen] = useState(false);
   const { title, subs, icon } = item;
+
+  // if contains subItems
   if (subs && subs.length > 0) {
     return (
       <li className="w-full cursor-pointer select-none items-center gap-2 rounded-md bg-opacity-50 p-3 dark:text-gray-100 ">
@@ -31,7 +33,7 @@ const DropDown = ({ item }) => {
       </li>
     );
   } else {
-    return <p>{title}</p>;
+    return <p className="w-full transition-colors duration-75 hover:text-red-400">{title}</p>;
   }
 };
 export default DropDown;
